@@ -64,8 +64,7 @@ jobs:
     
     - name: Check outdated dependencies
       run: |
-        pip install pip-outdated
-        pip-outdated --format=columns
+        pip list --outdated
     
     - name: Security audit of dependencies
       run: |
