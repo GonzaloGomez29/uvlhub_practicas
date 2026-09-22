@@ -12,6 +12,7 @@ jobs:
   codacy:
     runs-on: ubuntu-24.04
     strategy:
+      fail-fast: false
       matrix:
         python-version: ["3.13", "3.14"]
     services:
@@ -69,4 +70,4 @@ jobs:
     - name: Security audit of dependencies
       run: |
         pip install pip-audit
-        pip-audit --skip-editable
+        pip-audit -r requirements.txt
